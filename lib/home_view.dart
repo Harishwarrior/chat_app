@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +14,9 @@ class _HomePageState extends State<HomePage> {
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
+              leading: CircleAvatar(
+                radius: 20.0,
+              ),
               actions: [
                 Icon(
                   Icons.menu,
@@ -23,7 +27,8 @@ class _HomePageState extends State<HomePage> {
               flexibleSpace: PreferredSize(
                 preferredSize: Size.fromHeight(50.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(30.0),
+                  padding: const EdgeInsets.only(
+                      left: 20.0, right: 20.0, top: 45.0, bottom: 20.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -43,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                               vertical: 18.0, horizontal: 0.0),
                           child: Card(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
+                              borderRadius: BorderRadius.circular(25.0),
                             ),
                             elevation: 0.0,
                             child: ListTile(
@@ -81,15 +86,47 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              leading: Icon(
-                Icons.person_outline,
-                color: Colors.black,
-              ),
               backgroundColor: const Color(0xfff0f1f5),
               expandedHeight: 260.0,
             ),
             SliverList(
               delegate: SliverChildListDelegate([
+                Container(
+                  height: 90.0,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10.0),
+                          topRight: Radius.circular(10.0))),
+                ),
+                Container(
+                  height: 90.0,
+                  decoration: BoxDecoration(
+                      color: Colors.black12,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10.0),
+                          topRight: Radius.circular(10.0))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CircleAvatar(
+                        radius: 33.0,
+                      ),
+                      CircleAvatar(
+                        radius: 33.0,
+                      ),
+                      CircleAvatar(
+                        radius: 33.0,
+                      ),
+                      CircleAvatar(
+                        radius: 33.0,
+                      ),
+                      CircleAvatar(
+                        radius: 35.0,
+                      ),
+                    ],
+                  ),
+                ),
                 ListTile(
                   leading: Icon(Icons.volume_off),
                   title: Text("Volume Off"),
