@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -28,24 +27,23 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      Text(
-                        'Who do you want to talk with?',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 40.0,
+                      Expanded(
+                        child: Text(
+                          'Who do you want to talk with?',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 40.0,
+                          ),
                         ),
                       ),
-                      Container(
+                      Expanded(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
-                              vertical: 8.0, horizontal: 0.0),
+                              vertical: 18.0, horizontal: 0.0),
                           child: Card(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0),
+                              borderRadius: BorderRadius.circular(18.0),
                             ),
                             elevation: 0.0,
                             child: ListTile(
