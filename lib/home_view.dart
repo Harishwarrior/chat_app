@@ -19,16 +19,20 @@ class _HomePageState extends State<HomePage> {
               ),
               actions: [
                 Icon(
-                  Icons.menu,
+                  Icons.menu_outlined,
                   color: Colors.black,
+                  size: 30.0,
                 ),
+                SizedBox(
+                  width: 10.0,
+                )
               ],
               floating: true,
               flexibleSpace: PreferredSize(
                 preferredSize: Size.fromHeight(50.0),
                 child: Padding(
                   padding: const EdgeInsets.only(
-                      left: 20.0, right: 20.0, top: 45.0, bottom: 20.0),
+                      left: 20.0, right: 20.0, top: 70.0, bottom: 0.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -38,14 +42,14 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w700,
-                            fontSize: 40.0,
+                            fontSize: 35.0,
                           ),
                         ),
                       ),
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
-                              vertical: 18.0, horizontal: 0.0),
+                              vertical: 15.0, horizontal: 0.0),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25.0),
@@ -89,122 +93,134 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: const Color(0xfff0f1f5),
               expandedHeight: 260.0,
             ),
-            SliverList(
-              delegate: SliverChildListDelegate([
-                Container(
-                  height: 90.0,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0))),
-                ),
-                Container(
-                  height: 90.0,
-                  decoration: BoxDecoration(
-                      color: Colors.black12,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0))),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CircleAvatar(
-                        radius: 33.0,
+            Container(
+              child: SliverList(
+                delegate: SliverChildListDelegate([
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f1f5),
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30.0),
+                              topRight: Radius.circular(30.0))),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 10.0, bottom: 10.0),
+                            child: Text(
+                              'Active Friends',
+                              style: TextStyle(fontSize: 20.0),
+                            ),
+                          ),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                CircleAvatar(
+                                  radius: 33.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 33.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 33.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 33.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 35.0,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                      CircleAvatar(
-                        radius: 33.0,
-                      ),
-                      CircleAvatar(
-                        radius: 33.0,
-                      ),
-                      CircleAvatar(
-                        radius: 33.0,
-                      ),
-                      CircleAvatar(
-                        radius: 35.0,
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-                ListTile(
-                  leading: Icon(Icons.volume_off),
-                  title: Text("Volume Off"),
-                ),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_mute),
-                    title: Text("Volume Mute")),
-                ListTile(
-                    leading: Icon(Icons.volume_mute),
-                    title: Text("Volume Mute")),
-                ListTile(
-                    leading: Icon(Icons.volume_mute),
-                    title: Text("Volume Mute")),
-                ListTile(
-                    leading: Icon(Icons.volume_mute),
-                    title: Text("Volume Mute")),
-                ListTile(
-                    leading: Icon(Icons.volume_mute),
-                    title: Text("Volume Mute")),
-                ListTile(
-                    leading: Icon(Icons.volume_mute),
-                    title: Text("Volume Mute")),
-                ListTile(
-                    leading: Icon(Icons.volume_mute),
-                    title: Text("Volume Mute")),
-                ListTile(
-                    leading: Icon(Icons.volume_mute),
-                    title: Text("Volume Mute")),
-                ListTile(
-                    leading: Icon(Icons.volume_mute),
-                    title: Text("Volume Mute")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-                ListTile(
-                    leading: Icon(Icons.volume_down),
-                    title: Text("Volume Down")),
-              ]),
-            )
+                  ListTile(
+                      leading: Icon(Icons.volume_off),
+                      title: Text("Volume Off")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_mute),
+                      title: Text("Volume Mute")),
+                  ListTile(
+                      leading: Icon(Icons.volume_mute),
+                      title: Text("Volume Mute")),
+                  ListTile(
+                      leading: Icon(Icons.volume_mute),
+                      title: Text("Volume Mute")),
+                  ListTile(
+                      leading: Icon(Icons.volume_mute),
+                      title: Text("Volume Mute")),
+                  ListTile(
+                      leading: Icon(Icons.volume_mute),
+                      title: Text("Volume Mute")),
+                  ListTile(
+                      leading: Icon(Icons.volume_mute),
+                      title: Text("Volume Mute")),
+                  ListTile(
+                      leading: Icon(Icons.volume_mute),
+                      title: Text("Volume Mute")),
+                  ListTile(
+                      leading: Icon(Icons.volume_mute),
+                      title: Text("Volume Mute")),
+                  ListTile(
+                      leading: Icon(Icons.volume_mute),
+                      title: Text("Volume Mute")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                  ListTile(
+                      leading: Icon(Icons.volume_down),
+                      title: Text("Volume Down")),
+                ]),
+              ),
+            ),
           ],
         ),
       ),
