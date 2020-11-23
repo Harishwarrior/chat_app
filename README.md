@@ -2,6 +2,9 @@
 
 Chat application using flutter
 
+Concept:
+![](https://github.com/Harishwarrior/chat_app/blob/master/IMG-20201119-WA0006.jpg) 
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
