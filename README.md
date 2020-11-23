@@ -2,6 +2,8 @@
 
 Chat application using flutter
 
+# Still under construction
+
 Concept:
 ![](https://github.com/Harishwarrior/chat_app/blob/master/IMG-20201119-WA0006.jpg) 
 
