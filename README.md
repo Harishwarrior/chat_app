@@ -7,6 +7,12 @@ Chat application using flutter
 Concept:
 ![](https://github.com/Harishwarrior/chat_app/blob/master/IMG-20201119-WA0006.jpg) 
 
+
+Credits:
+
+https://dribbble.com/shots/6817520--14-ChatWithMe-Mobile-App-Concept
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
