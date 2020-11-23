@@ -2,13 +2,13 @@
 
 Chat application using flutter
 
-# Still under construction
+# ⚠️ Still under construction ⚠️
 
 Concept:
 ![](https://github.com/Harishwarrior/chat_app/blob/master/IMG-20201119-WA0006.jpg) 
 
 
-Credits:
+Credits:💙
 
 https://dribbble.com/shots/6817520--14-ChatWithMe-Mobile-App-Concept
 
