@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                                   BorderRadius.all(Radius.circular(20.0))),
                           child: Icon(
                             Icons.chevron_right,
-                            size: 30.0,
+                            size: 35.0,
                             color: Colors.white,
                           ),
                         ),
