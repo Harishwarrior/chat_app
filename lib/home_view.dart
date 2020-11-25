@@ -9,97 +9,83 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    MediaQueryData deviceSize = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
-        body: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              leading: CircleAvatar(
-                radius: 20.0,
-              ),
-              actions: [
-                Icon(
-                  Icons.menu_outlined,
-                  color: Colors.black,
-                  size: 30.0,
+        body: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                backgroundColor: Color(0xFFF0F1F5),
+                leading: Icon(
+                  Icons.person_outline,
+                  color: Colors.grey,
                 ),
-                SizedBox(
-                  width: 10.0,
-                )
-              ],
-              floating: true,
-              flexibleSpace: PreferredSize(
-                preferredSize: Size.fromHeight(50.0),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      left: 20.0, right: 20.0, top: 70.0, bottom: 0.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
+                actions: <Widget>[
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.menu_outlined,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+                expandedHeight: deviceSize.size.height * 0.30,
+                floating: false,
+                pinned: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: true,
+                  title: Container(
+                    width: deviceSize.size.width * 0.50,
+                    height: deviceSize.size.height * 0.15,
+                    constraints: BoxConstraints(minHeight: 40, maxHeight: 100),
+                    child: Column(children: [
                       Expanded(
                         child: Text(
-                          'Who do you want to talk with?',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 35.0,
+                          'Who do you want to chat?',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                      CupertinoTextField(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(25.0),
+                          ),
+                        ),
+                        keyboardType: TextInputType.text,
+                        prefix: Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(9.0, 6.0, 9.0, 6.0),
+                          child: Icon(
+                            Icons.search_rounded,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        suffix: Container(
+                          decoration: BoxDecoration(
+                              color: Color(0xff467dfd),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20.0))),
+                          child: Icon(
+                            Icons.chevron_right,
+                            size: 30.0,
+                            color: Colors.white,
                           ),
                         ),
                       ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 15.0, horizontal: 0.0),
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0),
-                            ),
-                            elevation: 0.0,
-                            child: ListTile(
-                              leading: Icon(
-                                Icons.search,
-                              ),
-                              title: TextField(
-                                // controller: controller,
-                                decoration: InputDecoration(
-                                  hintText: 'Search for friend..',
-                                  hintStyle: TextStyle(fontSize: 18.0),
-                                  border: InputBorder.none,
-                                ),
-                              ),
-                              trailing: Container(
-                                decoration: BoxDecoration(
-                                  color: Color(0xff467dfc),
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(40.0),
-                                  ),
-                                ),
-                                child: IconButton(
-                                  icon: Icon(
-                                    Icons.arrow_forward_ios_outlined,
-                                    color: Colors.white,
-                                  ),
-                                  onPressed: () {},
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ]),
                   ),
                 ),
               ),
-              backgroundColor: const Color(0xfff0f1f5),
-              expandedHeight: 260.0,
-            ),
-            Container(
-              child: SliverList(
-                delegate: SliverChildListDelegate([
+            ];
+          },
+          body: SingleChildScrollView(
+            child: Container(
+              child: Column(
+                children: [
                   Container(
-                    decoration: BoxDecoration(
-                      color: Color(0xfff0f1f5),
-                    ),
+                    color: Color(0xFFF0F1F5),
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -109,6 +95,9 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          SizedBox(
+                            height: 25.0,
+                          ),
                           Padding(
                             padding:
                                 const EdgeInsets.only(left: 10.0, bottom: 10.0),
@@ -117,111 +106,62 @@ class _HomePageState extends State<HomePage> {
                               style: TextStyle(fontSize: 20.0),
                             ),
                           ),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: 33.0,
-                                ),
-                                CircleAvatar(
-                                  radius: 33.0,
-                                ),
-                                CircleAvatar(
-                                  radius: 33.0,
-                                ),
-                                CircleAvatar(
-                                  radius: 33.0,
-                                ),
-                                CircleAvatar(
-                                  radius: 35.0,
-                                ),
-                              ],
+                          Container(
+                            margin: EdgeInsets.only(bottom: 16.0),
+                            color: Colors.white,
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  CircleAvatar(
+                                    radius: 33.0,
+                                  ),
+                                  CircleAvatar(
+                                    radius: 33.0,
+                                  ),
+                                  CircleAvatar(
+                                    radius: 33.0,
+                                  ),
+                                  CircleAvatar(
+                                    radius: 33.0,
+                                  ),
+                                  CircleAvatar(
+                                    radius: 35.0,
+                                  ),
+                                  CircleAvatar(
+                                    radius: 35.0,
+                                  ),
+                                  CircleAvatar(
+                                    radius: 35.0,
+                                  ),
+                                  CircleAvatar(
+                                    radius: 35.0,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                   ),
-                  ListTile(
-                      leading: Icon(Icons.volume_off),
-                      title: Text("Volume Off")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_mute),
-                      title: Text("Volume Mute")),
-                  ListTile(
-                      leading: Icon(Icons.volume_mute),
-                      title: Text("Volume Mute")),
-                  ListTile(
-                      leading: Icon(Icons.volume_mute),
-                      title: Text("Volume Mute")),
-                  ListTile(
-                      leading: Icon(Icons.volume_mute),
-                      title: Text("Volume Mute")),
-                  ListTile(
-                      leading: Icon(Icons.volume_mute),
-                      title: Text("Volume Mute")),
-                  ListTile(
-                      leading: Icon(Icons.volume_mute),
-                      title: Text("Volume Mute")),
-                  ListTile(
-                      leading: Icon(Icons.volume_mute),
-                      title: Text("Volume Mute")),
-                  ListTile(
-                      leading: Icon(Icons.volume_mute),
-                      title: Text("Volume Mute")),
-                  ListTile(
-                      leading: Icon(Icons.volume_mute),
-                      title: Text("Volume Mute")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                  ListTile(
-                      leading: Icon(Icons.volume_down),
-                      title: Text("Volume Down")),
-                ]),
+                  Container(
+                    height: deviceSize.size.height * 0.95,
+                    decoration: BoxDecoration(
+                        color: Color(0xff3e424b),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30.0),
+                            topRight: Radius.circular(30.0))),
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
