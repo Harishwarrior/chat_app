@@ -12,6 +12,7 @@ class _HomePageState extends State<HomePage> {
     MediaQueryData deviceSize = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFF0F1F5),
         body: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxScrolled) {
             return <Widget>[
@@ -104,131 +105,125 @@ class _HomePageState extends State<HomePage> {
               ),
             ];
           },
-          body: SingleChildScrollView(
-            child: Container(
-              child: Column(
-                children: [
-                  Container(
-                    color: Color(0xFFF0F1F5),
-                    child: Container(
+          body: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30.0),
+              topRight: Radius.circular(30.0),
+            ),
+            child: SingleChildScrollView(
+              child: Container(
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 25.0,
+                        ),
+                        Padding(
+                          padding:
+                              const EdgeInsets.only(left: 30.0, bottom: 15.0),
+                          child: Text(
+                            'Active Friends',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600, fontSize: 20.0),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(bottom: 30.0),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Wrap(
+                              direction: Axis.horizontal,
+                              spacing: 10,
+                              children: [
+                                SizedBox(
+                                  width: 20.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 33.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 33.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 33.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 33.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 35.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 35.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 35.0,
+                                ),
+                                CircleAvatar(
+                                  radius: 35.0,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      height: deviceSize.size.height * 0.95,
+                      width: deviceSize.size.width,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Color(0xff3e424b),
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(30.0),
                           topRight: Radius.circular(30.0),
                         ),
                       ),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: 25.0,
-                          ),
                           Padding(
-                            padding:
-                                const EdgeInsets.only(left: 30.0, bottom: 15.0),
-                            child: Text(
-                              'Active Friends',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600, fontSize: 20.0),
+                            padding: const EdgeInsets.only(
+                              top: 40.0,
+                              left: 30.0,
+                              right: 30.0,
                             ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(bottom: 30.0),
-                            color: Colors.white,
-                            child: SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Wrap(
-                                direction: Axis.horizontal,
-                                spacing: 10,
-                                children: [
-                                  SizedBox(
-                                    width: 20.0,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'My messages',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 20.0),
+                                ),
+                                Container(
+                                  alignment: Alignment.center,
+                                  width: 20.0,
+                                  height: 20.0,
+                                  child: Text(
+                                    '1',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w800,
+                                    ),
                                   ),
-                                  CircleAvatar(
-                                    radius: 33.0,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(10.0),
+                                    ),
                                   ),
-                                  CircleAvatar(
-                                    radius: 33.0,
-                                  ),
-                                  CircleAvatar(
-                                    radius: 33.0,
-                                  ),
-                                  CircleAvatar(
-                                    radius: 33.0,
-                                  ),
-                                  CircleAvatar(
-                                    radius: 35.0,
-                                  ),
-                                  CircleAvatar(
-                                    radius: 35.0,
-                                  ),
-                                  CircleAvatar(
-                                    radius: 35.0,
-                                  ),
-                                  CircleAvatar(
-                                    radius: 35.0,
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ),
-                  Container(
-                    height: deviceSize.size.height * 0.95,
-                    width: deviceSize.size.width,
-                    decoration: BoxDecoration(
-                      color: Color(0xff3e424b),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30.0),
-                        topRight: Radius.circular(30.0),
-                      ),
-                    ),
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            top: 40.0,
-                            left: 30.0,
-                            right: 30.0,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'My messages',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 20.0),
-                              ),
-                              Container(
-                                alignment: Alignment.center,
-                                width: 20.0,
-                                height: 20.0,
-                                child: Text(
-                                  '1',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                ),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(10.0),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
